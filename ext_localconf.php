@@ -2,10 +2,10 @@
 if (!defined('TYPO3_MODE')) {
 	die('Access denied.');
 }
-
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks']['TYPO3\CMS\Crtdevipmask\Task\Task'] = array(
-    'extension'        => $_EXTKEY,
-    'title'            => 'DevIPmask',
-    'description'      => 'Dieser Task benötigt eine IP-Adresse, die er alle 15 Minuten anpingen kann.',
+// Adding scheduler task
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks']['Cretection\\CrtDevipmask\\Task\\Pinger'] = array(
+	'extension'        => $_EXTKEY,
+	'title'            => 'Pinger',
+	'description'      => 'Pinger',
+	//'additionalFields' => 'WebentwicklerAt\\SchedulerHttp\\Task\\GetUrlTaskAdditionalFieldProvider',
 );
-?>
