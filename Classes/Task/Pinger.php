@@ -40,7 +40,7 @@ class Pinger extends \TYPO3\CMS\Scheduler\Task\AbstractTask {
 	 */
 	public function getAdditionalInformation() {
 		$message = sprintf(
-			$GLOBALS['LANG']->sL('LLL:EXT:scheduler_http/Resources/Private/Language/locallang.xlf:label.getUrl.additionalInformationUrl'),
+			$GLOBALS['LANG']->sL('LLL:EXT:crt_devipmask/Resources/Private/Language/locallang.xlf:label.getUrl.additionalInformationUrl'),
 			$this->url
 		);
 		return $message;

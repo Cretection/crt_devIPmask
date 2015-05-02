@@ -44,7 +44,7 @@ class PingerAdditionalFieldProvider implements \TYPO3\CMS\Scheduler\AdditionalFi
 		}
 		$additionalFields[$fieldId] = array(
 			'code'  => '<input type="text" name="tx_scheduler[' . $fieldId . ']" id="' . $fieldId . '" value="' . htmlspecialchars($taskInfo[$fieldId]) . '" size="60" />',
-			'label' => 'LLL:EXT:scheduler_http/Resources/Private/Language/locallang.xlf:label.getUrlTaskAdditionalFieldProvider.' . $fieldId,
+			'label' => 'LLL:EXT:crt_devipmask/Resources/Private/Language/locallang.xlf:label.getUrlTaskAdditionalFieldProvider.' . $fieldId,
 		);
 		return $additionalFields;
 	}
