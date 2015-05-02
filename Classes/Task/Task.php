@@ -1,10 +1,18 @@
 <?php
-   namespace TYPO3\CrtDevipmask\Task;
-   
-   class Task extends \TYPO3\CMS\Scheduler\Task\AbstractTask {
-      public function execute() {
-         //dein code mit fehlerabfragen etc.
-         return TRUE; //ende gut, alles gut?
-      }
-   }
+ namespace TYPO3\Crtdevipmask\Task;
+
+ class Task extends \TYPO3\CMS\Scheduler\Task\AbstractTask {
+
+    /**
+     * Function executed from the Scheduler.
+     * Sends an email
+     *
+     * @return boolean
+     */
+     public function execute() {
+
+        //Your logic to perform
+        return TRUE;
+     }
+  }
 ?>
