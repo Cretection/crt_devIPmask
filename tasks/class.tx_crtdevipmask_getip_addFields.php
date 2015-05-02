@@ -1,5 +1,5 @@
 <?php
-class tx_sfpinger_pinger_addFields implements tx_scheduler_AdditionalFieldProvider {
+class tx_crtdevipmask_getip_addFields implements tx_scheduler_AdditionalFieldProvider {
     public function getAdditionalFields(array &$taskInfo, $task, tx_scheduler_Module $parentObject) {
     
         if (empty($taskInfo['ip'])) {
