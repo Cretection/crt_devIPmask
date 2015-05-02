@@ -30,7 +30,6 @@ class Pinger extends \TYPO3\CMS\Scheduler\Task\AbstractTask {
 	 * @return bool TRUE on successful execution, FALSE on error
 	 */
 	public function execute() {
-		echo($this->url);
 		return true;
 	}
 	/**
