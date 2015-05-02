@@ -30,7 +30,19 @@ class Pinger extends \TYPO3\CMS\Scheduler\Task\AbstractTask {
 	 * @return bool TRUE on successful execution, FALSE on error
 	 */
 	public function execute() {
-		echo('hello');
+		echo($this->url);
 		return true;
+	}
+	/**
+	 * This method returns the configured URL as additional information
+	 *
+	 * @return string
+	 */
+	public function getAdditionalInformation() {
+		$message = sprintf(
+			$GLOBALS['LANG']->sL('LLL:EXT:scheduler_http/Resources/Private/Language/locallang.xlf:label.getUrl.additionalInformationUrl'),
+			$this->url
+		);
+		return $message;
 	}
 }
