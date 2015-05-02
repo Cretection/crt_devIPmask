@@ -7,5 +7,5 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks']['Cretection\\Crt
 	'extension'        => $_EXTKEY,
 	'title'            => 'Pinger',
 	'description'      => 'Pinger',
-	//'additionalFields' => 'WebentwicklerAt\\SchedulerHttp\\Task\\GetUrlTaskAdditionalFieldProvider',
+	'additionalFields' => 'Cretection\\CrtDevipmask\\Task\\PingerAdditionalFieldProvider',
 );
