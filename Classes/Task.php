@@ -1,5 +1,5 @@
 <?php
-   namespace TYPO3\Mytask\Task;
+   namespace TYPO3\CrtDevipmask\Task;
    
    class Task extends \TYPO3\CMS\Scheduler\Task\AbstractTask {
       public function execute() {
