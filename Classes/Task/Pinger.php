@@ -38,7 +38,7 @@ class Pinger extends \TYPO3\CMS\Scheduler\Task\AbstractTask {
 		);
 		
 		$test = $GLOBALS['TYPO3_DB']->exec_SELECTquery('uid', 'tx_crtdevipmask_ip','uid=4');
-		var_dump($test);
+		echo($test);
 
 		/**if(){
 			$res = $GLOBALS['TYPO3_DB']->exec_UPDATEquery('tx_crtdevipmask_ip','uid=1', $ipInsert);
