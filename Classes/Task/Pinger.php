@@ -13,9 +13,9 @@ namespace Cretection\CrtDevipmask\Task;
  * The TYPO3 project - inspiring people to share!
  */
 /**
- * Scheduler task doing GET-Requests.
+
  *
- * @author Gernot Leitgab <typo3@webentwickler.at>
+
  */
 class Pinger extends \TYPO3\CMS\Scheduler\Task\AbstractTask {
 	/**
@@ -30,6 +30,11 @@ class Pinger extends \TYPO3\CMS\Scheduler\Task\AbstractTask {
 	 * @return bool TRUE on successful execution, FALSE on error
 	 */
 	public function execute() {
+		$ip = gethostbynamel($this->url);
+		$ipcheck = array (
+			'lastip' => $ip
+		);
+		$res = $GLOBALS['TYPO3_DB']->exec_INSERTquery ('tx_crtdevipmask_ip', 'uid=1', $ipcheck);
 		return true;
 	}
 	/**
