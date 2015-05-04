@@ -30,11 +30,13 @@ class Pinger extends \TYPO3\CMS\Scheduler\Task\AbstractTask {
 	 * @return bool TRUE on successful execution, FALSE on error
 	 */
 	public function execute() {
-		$ip = $this->url;
-		$ipcheck = array (
+		$checkUrl = $this->url;
+		$host = parse_url($checkUrl, PHP_URL_HOST);
+		$ip = gethostbynamel($host);
+		$ipInsert = array (
 			'lastip' => $ip,
 		);
-		$res = $GLOBALS['TYPO3_DB']->exec_INSERTquery ('tx_crtdevipmask_ip', $ipcheck);
+		$res = $GLOBALS['TYPO3_DB']->exec_INSERTquery ('tx_crtdevipmask_ip', $ipInsert);
 		return true;
 	}
 	/**
