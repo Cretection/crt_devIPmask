@@ -31,8 +31,8 @@ class Pinger extends \TYPO3\CMS\Scheduler\Task\AbstractTask {
 	 */
 	public function execute() {
 		$checkUrl = $this->url;
-		$host = parse_url($checkUrl, PHP_URL_HOST);
-		$ip = gethostbynamel($host);
+		$parse = parse_url($checkUrl);
+		$ip = gethostbynamel($parse[host]);
 		$ipInsert = array (
 			'lastip' => $ip,
 		);
