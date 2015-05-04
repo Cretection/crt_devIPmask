@@ -34,10 +34,9 @@ class Pinger extends \TYPO3\CMS\Scheduler\Task\AbstractTask {
 		$parse = parse_url($checkUrl);
 		$ip = gethostbynamel($parse[host]);
 		$ipInsert = array (
-			'lastip' => $ip,
+			'lastip' => $ip[0],
 		);
-		var_dump($ip);
-		//$res = $GLOBALS['TYPO3_DB']->exec_INSERTquery ('tx_crtdevipmask_ip', $ipInsert);
+		$res = $GLOBALS['TYPO3_DB']->exec_INSERTquery ('tx_crtdevipmask_ip', $ipInsert);
 		return true;
 	}
 	/**
