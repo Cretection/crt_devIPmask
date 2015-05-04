@@ -43,6 +43,8 @@ class Pinger extends \TYPO3\CMS\Scheduler\Task\AbstractTask {
 		} else {
 			$res = $GLOBALS['TYPO3_DB']->exec_INSERTquery('tx_crtdevipmask_ip', $ipInsert);
 		}
+		$getLastIP = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows('lastip', 'tx_crtdevipmask_ip','uid = 0');
+		var_dump($getLastIP);
 		return true;
 	}
 	/**
