@@ -36,7 +36,7 @@ class Pinger extends \TYPO3\CMS\Scheduler\Task\AbstractTask {
 		$ipInsert = array (
 			'lastip' => $ip[0],
 		);
-		$uidCheck = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows('uid', 'tx_crtdevipmask_ip','uid = 1');
+		$uidCheck = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows('uid', 'tx_crtdevipmask_ip','uid = 4');
 		if($uidCheck){
 			echo('Yes');
 		}else {
