@@ -45,8 +45,7 @@ class Pinger extends \TYPO3\CMS\Scheduler\Task\AbstractTask {
 		}
 		$getLastIP = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows('lastip', 'tx_crtdevipmask_ip','uid = 0');
 		echo($getLastIP[0][lastip]);
-		$test = \TYPO3\CMS\Core\Configuration\ConfigurationManager::getLocalConfigurationValueByPath('[DB][host]');
-		echo($test);
+		echo(\TYPO3\CMS\Core\Configuration\ConfigurationManager::getLocalConfigurationValueByPath('[DB][host]'));
 		return true;
 	}
 	/**
