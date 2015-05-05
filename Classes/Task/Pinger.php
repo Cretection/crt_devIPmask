@@ -33,6 +33,14 @@ class Pinger extends \TYPO3\CMS\Scheduler\Task\AbstractTask {
 		$checkUrl = $this->url;
 		$parse = parse_url($checkUrl);
 		$ip = gethostbynamel($parse[host]);
+		
+		\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Configuration\\ConfigurationManager')->setLocalConfigurationValueByPath('SYS/devIPmask', $ip[0]);
+		
+		
+		/**
+		*
+		* Old Way with Database
+		*
 		$ipInsert = array (
 			'lastip' => $ip[0],
 		);
@@ -46,8 +54,8 @@ class Pinger extends \TYPO3\CMS\Scheduler\Task\AbstractTask {
 		$getLastIP = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows('lastip', 'tx_crtdevipmask_ip','uid = 0');
 		echo($getLastIP[0][lastip]);
 		$test = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Configuration\\ConfigurationManager')->getLocalConfigurationValueByPath('DB/host');
-		echo($test);
 		return true;
+		**/
 	}
 	/**
 	 * This method returns the configured URL as additional information
