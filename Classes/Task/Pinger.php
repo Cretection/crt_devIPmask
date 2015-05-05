@@ -35,7 +35,7 @@ class Pinger extends \TYPO3\CMS\Scheduler\Task\AbstractTask {
 		$ip = gethostbynamel($parse[host]);
 		
 		\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Configuration\\ConfigurationManager')->setLocalConfigurationValueByPath('SYS/devIPmask', $ip[0]);
-		
+		return true;
 		
 		/**
 		*
