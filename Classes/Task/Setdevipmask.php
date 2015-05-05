@@ -17,7 +17,7 @@ namespace Cretection\CrtDevipmask\Task;
  *
 
  */
-class Pinger extends \TYPO3\CMS\Scheduler\Task\AbstractTask {
+class Setdevipmask extends \TYPO3\CMS\Scheduler\Task\AbstractTask {
 	/**
 	 * URL
 	 *
@@ -33,29 +33,8 @@ class Pinger extends \TYPO3\CMS\Scheduler\Task\AbstractTask {
 		$checkUrl = $this->url;
 		$parse = parse_url($checkUrl);
 		$ip = gethostbynamel($parse[host]);
-		
 		\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Configuration\\ConfigurationManager')->setLocalConfigurationValueByPath('SYS/devIPmask', $ip[0]);
 		return true;
-		
-		/**
-		*
-		* Old Way with Database
-		*
-		$ipInsert = array (
-			'lastip' => $ip[0],
-		);
-		$uidCheck = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows('uid', 'tx_crtdevipmask_ip','uid = 0');
-		
-		if($uidCheck){
-			$res = $GLOBALS['TYPO3_DB']->exec_UPDATEquery('tx_crtdevipmask_ip','uid = 0', $ipInsert);
-		} else {
-			$res = $GLOBALS['TYPO3_DB']->exec_INSERTquery('tx_crtdevipmask_ip', $ipInsert);
-		}
-		$getLastIP = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows('lastip', 'tx_crtdevipmask_ip','uid = 0');
-		echo($getLastIP[0][lastip]);
-		$test = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Configuration\\ConfigurationManager')->getLocalConfigurationValueByPath('DB/host');
-		return true;
-		**/
 	}
 	/**
 	 * This method returns the configured URL as additional information
