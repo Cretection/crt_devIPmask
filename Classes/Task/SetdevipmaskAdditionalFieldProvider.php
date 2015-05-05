@@ -13,9 +13,22 @@ namespace Cretection\CrtDevipmask\Task;
  * The TYPO3 project - inspiring people to share!
  */
 class SetdevipmaskAdditionalFieldProvider implements \TYPO3\CMS\Scheduler\AdditionalFieldProviderInterface {
+	/**
+	 * Default field values
+	 *
+	 * @var array
+	 */
 	protected $defaults = array(
 		'url' => 'http://www.cretection.eu/',
 	);
+	/**
+	 * Add a text field for URL configuration
+	 *
+	 * @param array $taskInfo Reference to the array containing the info used in add/edit task form
+	 * @param \TYPO3\CMS\Scheduler\Task\AbstractTask $task The task object being edited. Null when adding a task!
+	 * @param \TYPO3\CMS\Scheduler\Controller\SchedulerModuleController $schedulerModule Reference to the scheduler backend module
+	 * @return array Array containing all the information pertaining to the additional fields
+	 */
 	public function getAdditionalFields(array &$taskInfo, $task, \TYPO3\CMS\Scheduler\Controller\SchedulerModuleController $schedulerModule) {
 		$fieldId = 'url';
 		if (!isset($taskInfo[$fieldId])) {
@@ -30,6 +43,11 @@ class SetdevipmaskAdditionalFieldProvider implements \TYPO3\CMS\Scheduler\Additi
 		);
 		return $additionalFields;
 	}
+	/**
+	 * @param array $submittedData Reference to the array containing the data submitted by the add/edit task form
+	 * @param \TYPO3\CMS\Scheduler\Controller\SchedulerModuleController $schedulerModule Reference to the scheduler backend module
+	 * @return bool TRUE if validation was ok (or selected class is not relevant), FALSE otherwise
+	 */
 	public function validateAdditionalFields(array &$submittedData, \TYPO3\CMS\Scheduler\Controller\SchedulerModuleController $schedulerModule) {
 		$validData = TRUE;
 		if (!\TYPO3\CMS\Core\Utility\GeneralUtility::isValidUrl($submittedData['url'])) {
@@ -37,6 +55,11 @@ class SetdevipmaskAdditionalFieldProvider implements \TYPO3\CMS\Scheduler\Additi
 		}
 		return $validData;
 	}
+	/**
+	 * @param array $submittedData An array containing the data submitted by the add/edit task form
+	 * @param \TYPO3\CMS\Scheduler\Task\AbstractTask $task Reference to the scheduler backend module
+	 * @return void
+	 */
 	public function saveAdditionalFields(array $submittedData, \TYPO3\CMS\Scheduler\Task\AbstractTask $task) {
 		$task->url = $submittedData['url'];
 	}
