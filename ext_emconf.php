@@ -11,8 +11,8 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = array(
-	'title' => 'Cretection: Dynamic devIPmask',
-	'description' => '',
+	'title' => 'Cretection: devIPmask',
+	'description' => 'Add a Scheduler Task to set devIPmask by URL (Example: DynDns-URL)',
 	'category' => 'service',
 	'author' => 'Jonathan Starck',
 	'author_email' => 'support@cretection.eu',
@@ -21,7 +21,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'uploadfolder' => '0',
 	'createDirs' => '',
 	'clearCacheOnLoad' => 1,
-	'version' => '0.1.0',
+	'version' => '0.0.0',
 	'constraints' => array(
 		'depends' => array(
 			'typo3' => '6.1.0-7.2.99',
