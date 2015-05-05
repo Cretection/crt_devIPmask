@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2015-03-03T19:50:00Z" product-name="crt_devipmask">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-05-05T02:24:00Z" product-name="crt_devipmask">
 		<header/>
 		<body>
 			<trans-unit id="getUrlTask.name">
@@ -10,7 +10,7 @@
 				<source>Requests configured URL</source>
 			</trans-unit>
 			<trans-unit id="label.getUrlTaskAdditionalFieldProvider.url">
-				<source>URL</source>
+				<source>URL (http://www.cretection.eu/)</source>
 			</trans-unit>
 			<trans-unit id="label.getUrl.additionalInformationUrl">
 				<source>URL: %s</source>
